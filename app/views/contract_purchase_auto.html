@@ -1,0 +1,160 @@
+
+<h1 class="center" >Договор купли-продажи автомобиля</h1>
+<div ng-controller="AutoCtrl">
+  <div class="col-xs-3" > <!-- required for floating -->
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs tabs-left">
+    <li class="active"><a data-target="#home" data-toggle="tab">Сведения о продавце</a></li>
+    <li><a data-target="#profile" data-toggle="tab">Сведения о покупателе</a></li>
+    <li><a data-target="#messages" data-toggle="tab">Свдения об автомобиле</a></li>
+    <li><a data-target="#settings" data-toggle="tab">Иные сведения</a></li>
+  </ul>
+</div>
+
+<div class="">
+  <!-- Tab panes -->
+  <div class="tab-content">
+
+
+    <div class="tab-pane active container col-lg-9" id="home">
+
+
+      <h3>Продавец:</h3>
+
+      <select style="width: 300px" class="form-control" ng-model="selection" ng-options="item for item in items">
+      </select>
+
+
+      <div  ng-switch on="selection">
+      <br/>
+
+      <div class="" ng-switch-when="Физическое лицо" ng-controller="TpersondataCtrl">
+        <fieldset>
+          <legend>Личные данные</legend>
+          <form class="form-horizontal" name="userForm" novalidate>
+            <div class="form-group" ng-class="{ 'has-error': userForm.lastname.$invalid && userForm.lastname.$dirty }">
+              <label for="lastname" class="col-lg-2 control-label">Ф.И.О.</label>
+              <div class="col-lg-8">
+                <input type="text" class="form-control" id="lastname" name="lastname" ng-model="user.lastname" dadata ddt-type="NAME" ddt-model="addr" required placeholder="Например: Петров Иван Иванович" />
+              </div>
+            </div>
+          </form>
+        </fieldset>
+        <fieldset>
+          <legend>Паспорт</legend>
+          <form class="form-horizontal" name="userDoc" novalidate>
+            <div class="form-group" ng-class="{ 'has-error': userDoc.series.$invalid && userDoc.series.$dirty }">
+              <label for="series" class="col-lg-2 control-label">Серия</label>
+              <div class="col-lg-8">
+                <input type="text" class="form-control" id="series" name="series" ng-model="user.series" required placeholder="" />
+              </div>
+            </div>
+
+            <div class="form-group" ng-class="{ 'has-error': userDoc.number.$invalid && userDoc.number.$dirty }">
+              <label for="number" class="col-lg-2 control-label">Номер</label>
+              <div class="col-lg-8">
+                <input type="text" class="form-control" id="number" name="number" ng-model="user.number" required placeholder="" />
+              </div>
+            </div>
+
+            <div class="form-group" ng-class="{ 'has-error': userDoc.date.$invalid && userDoc.date.$dirty }">
+              <label for="date" class="col-lg-2 control-label">Дата выдачи</label>
+              <div class="col-lg-8">
+                <input type="date" class="form-control" id="date" name="date" ng-model="user.date" required placeholder="" />
+              </div>
+            </div>
+
+            <div class="form-group" ng-class="{ 'has-error': userDoc.gov.$invalid && userDoc.gov.$dirty }">
+              <label for="gov" class="col-lg-2 control-label">Кем выдан</label>
+              <div class="col-lg-8">
+                <input type="text" class="form-control" id="gov" name="gov" ng-model="user.gov" required placeholder="" />
+              </div>
+            </div>
+
+
+
+          </form>
+
+        </fieldset>
+
+        <fieldset>
+          <legend>Контактные данные</legend>
+          <form class="form-horizontal" name="userAdd" novalidate>
+            <div class="form-group" ng-class="{ 'has-error': userAdd.adress.$invalid && userAdd.adress.$dirty }">
+              <label for="adress" class="col-lg-2 control-label">Адрес</label>
+              <div class="col-lg-8">
+                <textarea rows="10" cols="30" type="text" class="form-control" id="adress" name="adress" ng-model="user.adress" style="height: 70px;" dadata ddt-type="ADDRESS" ddt-model="addr" required placeholder="Например: Большая Садовая ул., 10, кв. 50, Москва" />
+              </div>
+            </div>
+          </form>
+        </fieldset>
+
+      </div>
+      <div class="" ng-switch-when="Юридическое лицо" ng-controller="TentitydataCtrl">
+        <fieldset>
+          <legend>Введите ИНН, наименование или адрес организации</legend>
+          <form class="form-horizontal" name="entityForm" >
+            <div class="form-group">
+
+              <div class="col-lg-8">
+                <input type="text" class="form-control" id="entity" name="entity"  dadata ddt-type="PARTY" ddt-model="addr" />
+              </div>
+            </div>
+          </form>
+          <div ng-show="addr">
+
+            <fieldset>
+              <form class="form-horizontal" name="entityForm">
+                <div class="form-group">
+                  <label for="fullname" class="col-lg-2 control-label">Полное наименование</label>
+
+                  <div class="col-lg-8">
+                    <textarea rows="10" cols="30" class="form-control" ng-readonly="true" value="" id="fullname"
+                              name="fullname" style="height: 70px; margin-bottom: 20px;">{{addr.name.full_with_opf}}</textarea>
+                  </div>
+
+                  <label for="namemanage" class="col-lg-2 control-label" style="clear: both;">Наименование должности руководителя</label>
+
+                  <div class="col-lg-8">
+                    <input type="text" class="form-control" ng-readonly="true" value="{{addr.management.post}}"
+                           id="namemanage" name="namemanage"/>
+                  </div>
+                </div>
+
+              </form>
+
+              <div class="form-group">
+                <label for="nameceo" class="col-lg-2 control-label">Имя руководителя</label>
+                <div class="col-lg-8">
+                  <input type="text" class="form-control" ng-readonly="true" value="{{addr.management.name}}" id="nameceo" name="nameceo" />
+                </div>
+              </div>
+              </form>
+            </fieldset>
+
+
+
+          </div>
+
+        </fieldset>
+
+      </div>
+
+      </div>
+
+    </div>
+
+    <div class="tab-pane col-lg-9" id="profile">
+
+    </div>
+    <div class="tab-pane container col-lg-9" id="messages">Messages Tab.</div>
+    <div class="tab-pane container col-lg-9" id="settings">Settings Tab.</div>
+    <div >
+      <p><a class=" btn btn-lg btn-success" ng-href="#/">черновик PD<span class="glyphicon glyphicon-ok"></span></a></p>
+    </div>
+  </div>
+
+
+
+</div>
+</div>

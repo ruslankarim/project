@@ -1,0 +1,62 @@
+<div class="container col-lg-9" ng-controller="TpersondataCtrl">
+  <fieldset>
+    <legend>Личные данные</legend>
+            <form class="form-horizontal" name="userForm" novalidate>
+              <div class="form-group" ng-class="{ 'has-error': userForm.lastname.$invalid && userForm.lastname.$dirty }">
+                <label for="lastname" class="col-lg-2 control-label">Ф.И.О.</label>
+                <div class="col-lg-8">
+                <input type="text" class="form-control" id="lastname" name="lastname" ng-model="user.lastname" dadata ddt-type="NAME" ddt-model="addr" required placeholder="Например: Петров Иван Иванович" />
+                </div>
+              </div>
+            </form>
+  </fieldset>
+  <fieldset>
+    <legend>Паспорт</legend>
+            <form class="form-horizontal" name="userDoc" novalidate>
+              <div class="form-group" ng-class="{ 'has-error': userDoc.series.$invalid && userDoc.series.$dirty }">
+                <label for="series" class="col-lg-2 control-label">Серия</label>
+                <div class="col-lg-8">
+                  <input type="text" class="form-control" id="series" name="series" ng-model="user.series" required placeholder="" />
+                </div>
+              </div>
+
+              <div class="form-group" ng-class="{ 'has-error': userDoc.number.$invalid && userDoc.number.$dirty }">
+                <label for="number" class="col-lg-2 control-label">Номер</label>
+                <div class="col-lg-8">
+                  <input type="text" class="form-control" id="number" name="number" ng-model="user.number" required placeholder="" />
+                </div>
+              </div>
+
+              <div class="form-group" ng-class="{ 'has-error': userDoc.date.$invalid && userDoc.date.$dirty }">
+                <label for="date" class="col-lg-2 control-label">Дата выдачи</label>
+                <div class="col-lg-8">
+                  <input type="date" class="form-control" id="date" name="date" ng-model="user.date" required placeholder="" />
+                </div>
+              </div>
+
+              <div class="form-group" ng-class="{ 'has-error': userDoc.gov.$invalid && userDoc.gov.$dirty }">
+                <label for="gov" class="col-lg-2 control-label">Кем выдан</label>
+                <div class="col-lg-8">
+                  <input type="text" class="form-control" id="gov" name="gov" ng-model="user.gov" required placeholder="" />
+                </div>
+              </div>
+
+
+
+            </form>
+
+  </fieldset>
+
+  <fieldset>
+    <legend>Контактные данные</legend>
+    <form class="form-horizontal" name="userAdd" novalidate>
+      <div class="form-group" ng-class="{ 'has-error': userAdd.adress.$invalid && userAdd.adress.$dirty }">
+        <label for="adress" class="col-lg-2 control-label">Адрес</label>
+        <div class="col-lg-8">
+          <textarea rows="10" cols="30" type="text" class="form-control" id="adress" name="adress" ng-model="user.adress" style="height: 70px;" dadata ddt-type="ADDRESS" ddt-model="addr" required placeholder="Например: Большая Садовая ул., 10, кв. 50, Москва" />
+        </div>
+      </div>
+    </form>
+  </fieldset>
+
+</div>

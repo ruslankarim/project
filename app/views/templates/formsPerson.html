@@ -1,0 +1,16 @@
+<h3 >Личные данные</h3>
+<form class="form-horizontal"  ng-repeat='item in data'>
+
+  <div class="form-group">
+
+    <!-- Класс "col-lg-2" растягивает тег <label> на 2 колонки -->
+    <!-- Класс "control-label" перемещает текст метки вправо -->
+
+    <label for="{{item.price}}" class="col-lg-2 control-label">{{item.name}}</label>
+
+    <!-- Класс "col-lg-8" растягивает тег <div> на 8 колонок -->
+    <div class="col-lg-8">
+      <input type="text" class="form-control" id="{{item.price}}">
+    </div>
+  </div>
+</form>

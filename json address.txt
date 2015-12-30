@@ -1,0 +1,14 @@
+kpp	165501001
+management	{"name":"Серазутдинов Тимур Ильдарович","post":"Директор"}
+branch_type	MAIN
+branch_count	1
+type	LEGAL
+opf	{"code":"12165","full":"Общество с ограниченной ответственностью","short":"ООО"}
+name	{"full_with_opf":"Общество с ограниченной ответственностью \"Максимилианс-Казань\"","short_with_opf":"ООО \"Максимилианс-Казань\"","latin":null,"full":"Максимилианс-Казань","short":"Максимилианс-Казань"}
+inn	1655186284
+ogrn	1091690066500
+okpo	64012957
+okved	70.2
+state	{"status":"ACTIVE","actuality_date":1409616000000,"registration_date":1261526400000,"liquidation_date":null}
+address	{"value":"Респ Татарстан, г Казань, ул Спартаковская, д 6","unrestricted_value":"Респ Татарстан, г Казань, ул Спартаковская, д 6","data":{"qc_complete":null,"qc_house":null,"qc_geo":null,"postal_code":"420107","postal_box":null,"country":"Россия","region_with_type":"Респ Татарстан","region_type":"Респ","region_type_full":"республика","region":"Татарстан","area_with_type":null,"area_type":null,"area_type_full":null,"area":null,"city_with_type":"г Казань","city_type":"г","city_type_full":"город","city":"Казань","city_district":null,"settlement_with_type":null,"settlement_type":null,"settlement_type_full":null,"settlement":null,"street_with_type":"ул Спартаковская","street_type":"ул","street_type_full":"улица","street":"Спартаковская","house_type":"д","house_type_full":"дом","house":"6","block_type":null,"block_type_full":null,"block":null,"flat_area":null,"square_meter_price":null,"flat_price":null,"flat_type":null,"flat_type_full":null,"flat":null,"fias_id":"6f60029c-ae9a-4a09-ad81-80ee01a9abbe","fias_level":null,"kladr_id":"1600000100013520017","tax_office":"1655","tax_office_legal":null,"capital_marker":null,"okato":"92401367000","oktmo":null,"timezone":null,"geo_lat":null,"geo_lon":null,"unparsed_parts":null,"qc":null}}
+ from the Yeoman team
